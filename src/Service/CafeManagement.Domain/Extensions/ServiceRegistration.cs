@@ -1,4 +1,5 @@
 using CafeManagement.Domain.Context;
+using CafeManagement.Domain.Seed;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -11,5 +12,6 @@ public static class ServiceRegistration
     {
         services.AddDbContext<CafeManagementContext>(options
             => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+
     }
 }
