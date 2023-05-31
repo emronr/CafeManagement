@@ -1,10 +1,9 @@
 using CafeManagement.Domain.Context;
-using CafeManagement.Domain.Seed;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace CafeManagement.Domain;
+namespace CafeManagement.Domain.Extensions;
 
 public static class ServiceRegistration
 {

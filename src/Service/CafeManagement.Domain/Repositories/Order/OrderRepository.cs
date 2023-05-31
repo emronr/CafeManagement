@@ -1,4 +1,5 @@
 using System.Linq;
+using System.Threading.Tasks;
 using CafeManagement.Domain.Context;
 using CafeManagement.Domain.Repositories.Base;
 using Microsoft.EntityFrameworkCore;
@@ -10,12 +11,12 @@ namespace CafeManagement.Domain.Repositories.Order
         public OrderRepository(CafeManagementContext context) : base(context)
         {
         }
-        public Entities.Order.Order GetActiveOrder(int tableId)
+        public async Task<Entities.Order.Order> GetActiveOrder(int tableId)
         {
-            var activeOrder = _context.Set<Entities.Order.Order>()
+            var activeOrder =await _context.Set<Entities.Order.Order>()
                 .Include(x => x.OrderDetails.Select(y => y.Product))
                 .Include(x => x.Table)
-                .FirstOrDefault(x => x.TableId == tableId && x.PaymentDate == null);
+                .FirstOrDefaultAsync(x => x.TableId == tableId && x.PaymentDate == null);
 
             return activeOrder;
         }
