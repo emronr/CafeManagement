@@ -8,8 +8,8 @@ namespace CafeManagement.Domain.Entities.Order
     public class Order : BaseEntity<int>
     {
         public int TableId { get; set; }
-        public virtual Table Table { get; set; }
-        public virtual List<OrderDetail> OrderDetails { get; set; } 
+        public Table Table { get; set; }
+        public List<OrderDetail> OrderDetails { get; set; } 
 
         public DateTime CreateDate { get; set; }
         public DateTime LastOrderDate { get; set; }
