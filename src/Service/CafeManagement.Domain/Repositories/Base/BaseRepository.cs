@@ -25,7 +25,7 @@ namespace CafeManagement.Domain.Repositories.Base
             await _context.Set<TEntity>().AddRangeAsync(entities);
             _context.SaveChanges();
         }
-        
+
         public async Task<TEntity> CreateAsync(TEntity entity)
         {
             await _context.Set<TEntity>().AddAsync(entity);
@@ -50,14 +50,12 @@ namespace CafeManagement.Domain.Repositories.Base
             return await _context.Set<TEntity>().FindAsync(entityId);
         }
 
-        public async Task<IQueryable<TEntity>> Query(Expression<Func<TEntity, bool>>? filter)
+        public IQueryable<TEntity> Query()
         {
-            return filter == null
-                ? _context.Set<TEntity>().AsQueryable()
-                : _context.Set<TEntity>().Where(filter).AsQueryable();
+            return _context.Set<TEntity>().AsQueryable();
         }
 
-      
+
         public async Task<List<TEntity>> GetAllAsync()
         {
             return await _context.Set<TEntity>().ToListAsync();

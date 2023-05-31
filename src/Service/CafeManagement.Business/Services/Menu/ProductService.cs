@@ -27,9 +27,9 @@ public class ProductService : IProductService
         return _mapper.Map<ProductDto>(product);
     }
 
-    public async Task<List<ProductDto>> GetProducts(int categoryId)
+    public List<ProductDto> GetProducts(int categoryId)
     {
-        var products = await _productRepository.Query(x => x.CategoryId == categoryId);
+        var products =  _productRepository.Query().Where(x => x.CategoryId == categoryId);
         return _mapper.Map<List<ProductDto>>(products.ToList());
     }
 }

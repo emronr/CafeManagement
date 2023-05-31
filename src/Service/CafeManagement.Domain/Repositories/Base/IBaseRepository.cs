@@ -14,6 +14,6 @@ namespace CafeManagement.Domain.Repositories.Base
         void Delete(TEntity entity);
         Task<List<TEntity>> GetAllAsync();
         Task<TEntity> FindAsync(TKey entityId);
-        Task<IQueryable<TEntity>> Query(Expression<Func<TEntity, bool>>? filter);
+        IQueryable<TEntity> Query();
     }
 }

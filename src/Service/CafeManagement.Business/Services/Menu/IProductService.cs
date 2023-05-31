@@ -22,5 +22,5 @@ public interface IProductService
     /// </summary>
     /// <param name="categoryId"></param>
     /// <returns></returns>
-    Task<List<ProductDto>> GetProducts(int categoryId);
+    List<ProductDto> GetProducts(int categoryId);
 }
