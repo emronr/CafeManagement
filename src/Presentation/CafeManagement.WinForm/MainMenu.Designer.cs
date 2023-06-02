@@ -235,7 +235,6 @@
             Controls.Add(label1);
             Name = "MainMenu";
             Text = "Ana Menü";
-            WindowState = FormWindowState.Maximized;
             orderControlPanel.ResumeLayout(false);
             orderControlPanel.PerformLayout();
             ResumeLayout(false);
