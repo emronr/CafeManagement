@@ -13,8 +13,9 @@ public static class ServiceRegistration
 {
     public static void AddDomainRegistrations(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddDbContext<CafeManagementContext>(options
-            => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+        services.AddTransient<CafeManagementContext>();
+        //services.AddDbContext<CafeManagementContext>(options
+        //    => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
         
         services.AddScoped(typeof(IBaseRepository<,>), typeof(BaseRepository<,>));
         services.AddScoped<ITableRepository, TableRepository>();

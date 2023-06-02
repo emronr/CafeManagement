@@ -37,7 +37,7 @@ namespace CafeManagement.Domain.Seed
 
             if (!existProduct)
             {
-                context.Products.AddRange(SeedProducts());
+                context.Products.AddRange(SeedProducts(context));
                 context.SaveChanges();
             }
 
@@ -49,55 +49,46 @@ namespace CafeManagement.Domain.Seed
             {
                 new Table()
                 {
-                    Id = 1,
                     TableName = "Masa 1",
                     IsFull = false
                 },
                 new Table()
                 {
-                    Id = 2,
                     TableName = "Masa 2",
                     IsFull = false
                 },
                 new Table()
                 {
-                    Id = 3,
                     TableName = "Masa 3",
                     IsFull = false
                 },
                 new Table()
                 {
-                    Id = 4,
                     TableName = "Masa 4",
                     IsFull = false
                 },
                 new Table()
                 {
-                    Id = 5,
                     TableName = "Masa 5",
                     IsFull = false
                 },
                 new Table()
                 {
-                    Id = 6,
                     TableName = "Masa 6",
                     IsFull = false
                 },
                 new Table()
                 {
-                    Id = 7,
                     TableName = "Masa 7",
                     IsFull = false
                 },
                 new Table()
                 {
-                    Id = 8,
                     TableName = "Masa 8",
                     IsFull = false
                 },
                 new Table()
                 {
-                    Id = 9,
                     TableName = "Masa 9",
                     IsFull = false
                 }
@@ -110,119 +101,103 @@ namespace CafeManagement.Domain.Seed
             {
                 new()
                 {
-                    Id = 1,
                     Name = "Kahvaltılar",
                 },
                 new()
                 {
-                    Id = 2,
                     Name = "Pizzalar",
                 },
                 new()
                 {
-                    Id = 3,
                     Name = "Burgerler",
                 },
                 new()
                 {
-                    Id =4,
                     Name = "Makarnalar",
                 },
                 new()
                 {
-                    Id = 5,
                     Name = "Tatlılar",
                 },
                 new()
                 {
-                    Id = 6,
                     Name = "Soğuk İçecekler",
                 },
                 new()
                 {
-                    Id = 7,
                     Name = "Sıcak İçecekler",
                 }
             };
         }
 
-        private  static IEnumerable<Product> SeedProducts()
+        private  static IEnumerable<Product> SeedProducts(CafeManagementContext context)
         {
+            var categories = context.Categories.ToList();
             return new List<Product>()
             {
                 new()
                 {
-                    Id = 1,
                     Name = "Serpme Kahvaltı",
                     Description = "2 Kişilik",
                     Price = 10,
-                    CategoryId = SeedCategories().First(x => x.Name.Equals("Kahvaltılar")).Id
+                    CategoryId = categories.First(x => x.Name.Equals("Kahvaltılar")).Id
                 },
                 new()
                 {
-                    Id =2,
                     Name = "Serpme Kahvaltı",
                     Description = "3 Kişilik",
                     Price = 17,
-                    CategoryId = SeedCategories().First(x => x.Name.Equals("Kahvaltılar")).Id
+                    CategoryId = categories.First(x => x.Name.Equals("Kahvaltılar")).Id
                 },
                 new()
                 {
-                    Id = 3,
                     Name = "Serpme Kahvaltı",
                     Description = "4 Kişilik",
                     Price = 20,
-                    CategoryId = SeedCategories().First(x => x.Name.Equals("Kahvaltılar")).Id
+                    CategoryId = categories.First(x => x.Name.Equals("Kahvaltılar")).Id
                 },
                 new()
                 {
-                    Id = 4,
                     Name = "Serpme Kahvaltı",
                     Description = "6 Kişilik",
                     Price = 40,
-                    CategoryId = SeedCategories().First(x => x.Name.Equals("Kahvaltılar")).Id
+                    CategoryId = categories.First(x => x.Name.Equals("Kahvaltılar")).Id
                 },
                 new()
                 {
-                    Id = 5,
                     Name = "Latte",
                     Price = 10,
-                    CategoryId = SeedCategories().First(x => x.Name.Equals("Soğuk İçecekler")).Id
+                    CategoryId = categories.First(x => x.Name.Equals("Soğuk İçecekler")).Id
                 },
                 new()
                 {
-                    Id = 6,
                     Name = "Americano",
                     Price = 10,
-                    CategoryId = SeedCategories().First(x => x.Name.Equals("Soğuk İçecekler")).Id
+                    CategoryId = categories.First(x => x.Name.Equals("Soğuk İçecekler")).Id
                 },
                 new()
                 {
-                    Id = 7,
                     Name = "Expresso",
                     Price = 10,
-                    CategoryId = SeedCategories().First(x => x.Name.Equals("Soğuk İçecekler")).Id
+                    CategoryId = categories.First(x => x.Name.Equals("Soğuk İçecekler")).Id
                 },
                 new()
                 {
-                    Id = 8,
                     Name = "Cold Brew",
                     Price = 10,
-                    CategoryId = SeedCategories().First(x => x.Name.Equals("Soğuk İçecekler")).Id
+                    CategoryId = categories.First(x => x.Name.Equals("Soğuk İçecekler")).Id
                 },
                 new()
                 {
-                    Id = 9,
                     Name = "Çay",
                     Price = 10,
-                    CategoryId = SeedCategories().First(x => x.Name.Equals("Sıcak İçecekler")).Id
+                    CategoryId = categories.First(x => x.Name.Equals("Sıcak İçecekler")).Id
                 },
                 new()
                 {
-                    Id =  10,
                     Name = "Ihlamur",
                     Price = 10,
-                    CategoryId = SeedCategories().First(x => x.Name.Equals("Sıcak İçecekler")).Id
+                    CategoryId = categories.First(x => x.Name.Equals("Sıcak İçecekler")).Id
                 },
             };
         }

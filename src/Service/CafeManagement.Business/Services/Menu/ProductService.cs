@@ -1,5 +1,7 @@
 using AutoMapper;
 using CafeManagement.Business.DTOs;
+using CafeManagement.Business.DTOs.Inputs;
+using CafeManagement.Domain.Entities.Menu;
 using CafeManagement.Domain.Repositories.Menu;
 
 namespace CafeManagement.Business.Services.Menu;
@@ -31,5 +33,18 @@ public class ProductService : IProductService
     {
         var products =  _productRepository.Query().Where(x => x.CategoryId == categoryId);
         return _mapper.Map<List<ProductDto>>(products.ToList());
+    }
+
+    public async Task<int> CreateProductAsync(CreateProductInput createProductInput)
+    {
+        var product = _mapper.Map<Product>(createProductInput);
+        var productEntity = await _productRepository.CreateAsync(product);
+        return productEntity.Id;
+    }
+
+    public async Task UpdateProductAsync(ProductDto productDto)
+    {
+        var product = await _productRepository.FindAsync(productDto.Id);
+        _productRepository.Update(_mapper.Map(productDto, product));
     }
 }

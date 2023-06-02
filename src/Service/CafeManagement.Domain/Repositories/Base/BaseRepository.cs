@@ -14,10 +14,14 @@ namespace CafeManagement.Domain.Repositories.Base
         where TKey : IComparable
     {
         protected readonly CafeManagementContext _context;
+        protected DbSet<TEntity> DbSet { get; set; }
 
         public BaseRepository(CafeManagementContext context)
         {
             _context = context;
+
+            _context.ChangeTracker.LazyLoadingEnabled = true;
+            DbSet = _context.Set<TEntity>();
         }
 
         public async Task CreateAsync(List<TEntity> entities)

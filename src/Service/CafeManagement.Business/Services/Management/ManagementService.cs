@@ -46,7 +46,7 @@ namespace CafeManagement.Business.Services.Management
         public async Task<List<TableDto>> GetTables()
         {
             var tables = await _tableRepository.GetAllAsync();
-            return _mapper.Map<List<TableDto>>(tables);
+            return _mapper.Map<List<TableDto>>(tables.OrderBy(x => x.TableName).ToList());
         }
 
         public async Task<int> CreateOrder(CreateOrderInput createOrderInput)

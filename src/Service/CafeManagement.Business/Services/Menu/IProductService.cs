@@ -1,4 +1,5 @@
 using CafeManagement.Business.DTOs;
+using CafeManagement.Business.DTOs.Inputs;
 
 namespace CafeManagement.Business.Services.Menu;
 
@@ -23,4 +24,18 @@ public interface IProductService
     /// <param name="categoryId"></param>
     /// <returns></returns>
     List<ProductDto> GetProducts(int categoryId);
+
+    /// <summary>
+    /// Ürün ekler.
+    /// </summary>
+    /// <param name="createProductInput"></param>
+    /// <returns></returns>
+    Task<int> CreateProductAsync(CreateProductInput createProductInput);
+
+    /// <summary>
+    /// Ürünü günceller
+    /// </summary>
+    /// <param name="productDto"></param>
+    /// <returns></returns>
+    Task UpdateProductAsync(ProductDto productDto);
 }
