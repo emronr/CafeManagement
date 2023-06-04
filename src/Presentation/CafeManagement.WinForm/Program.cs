@@ -47,7 +47,7 @@ namespace CafeManagement.WinForm
         }
         static void ConfigureServices(IServiceCollection services)
         {
-            services.AddBusinessRegistrationForDesktopApp(Configuration);
+            services.AddBusinessRegistrationForDesktopApp();
 
             //forms
             services.AddTransient<MainMenu>();

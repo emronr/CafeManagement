@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CafeManagement.Business.DTOs.Inputs
+﻿namespace CafeManagement.Business.DTOs.Inputs
 {
     public class CreateProductInput
     {

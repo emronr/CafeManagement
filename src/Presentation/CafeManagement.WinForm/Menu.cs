@@ -1,7 +1,6 @@
 ﻿using CafeManagement.Business.DTOs.Inputs;
 using CafeManagement.Business.Services.Management;
 using CafeManagement.Business.Services.Menu;
-using System.Data;
 
 namespace CafeManagement.WinForm
 {

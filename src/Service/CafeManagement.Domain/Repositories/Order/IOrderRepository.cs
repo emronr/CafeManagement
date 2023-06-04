@@ -1,4 +1,3 @@
-using System.Threading.Tasks;
 using CafeManagement.Domain.Repositories.Base;
 
 namespace CafeManagement.Domain.Repositories.Order

@@ -9,15 +9,24 @@ namespace CafeManagement.Business.Extensions;
 
 public static class ServiceRegistration
 {
-    public static void AddBusinessRegistrationForDesktopApp(this IServiceCollection services, IConfiguration configuration)
+    public static void AddBusinessRegistrationForDesktopApp(this IServiceCollection services)
     {
-        services.AddDomainRegistrations(configuration);
+        services.AddDomainRegistrationsForDesktop();
         
         services.AddAutoMapper(config => config.AddProfile(new MappingProfile()));
 
         services.AddTransient<IManagementService, ManagementService>();
         services.AddTransient<ICategoryService, CategoryService>();
         services.AddTransient<IProductService,ProductService >();
+    }
+    public static void AddBusinessRegistrationForWebApp(this IServiceCollection services)
+    {
+        services.AddDomainRegistrationsForWebApp();
         
+        services.AddAutoMapper(config => config.AddProfile(new MappingProfile()));
+
+        services.AddScoped<IManagementService, ManagementService>();
+        services.AddScoped<ICategoryService, CategoryService>();
+        services.AddScoped<IProductService,ProductService >();
     }
 }

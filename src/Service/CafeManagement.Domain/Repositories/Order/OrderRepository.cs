@@ -1,8 +1,5 @@
-using System.Linq;
-using System.Threading.Tasks;
 using CafeManagement.Domain.Context;
 using CafeManagement.Domain.Repositories.Base;
-using Microsoft.EntityFrameworkCore;
 
 namespace CafeManagement.Domain.Repositories.Order
 {
