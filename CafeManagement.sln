@@ -15,6 +15,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CafeManagement.WinForm", "src\Presentation\CafeManagement.WinForm\CafeManagement.WinForm.csproj", "{C4658FB4-C720-49B0-9EDF-49CBE033E12F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CafeManagement.API", "src\Presentation\CafeManagement.API\CafeManagement.API.csproj", "{1C7B5407-677F-4133-B3B5-59B7FA3F303A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CafeManagement.Common", "src\Service\CafeManagement.Common\CafeManagement.Common.csproj", "{68AA3B4B-62CD-48D2-B5C7-E570D087FBC7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{C4658FB4-C720-49B0-9EDF-49CBE033E12F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4658FB4-C720-49B0-9EDF-49CBE033E12F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4658FB4-C720-49B0-9EDF-49CBE033E12F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C7B5407-677F-4133-B3B5-59B7FA3F303A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C7B5407-677F-4133-B3B5-59B7FA3F303A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C7B5407-677F-4133-B3B5-59B7FA3F303A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C7B5407-677F-4133-B3B5-59B7FA3F303A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68AA3B4B-62CD-48D2-B5C7-E570D087FBC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68AA3B4B-62CD-48D2-B5C7-E570D087FBC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68AA3B4B-62CD-48D2-B5C7-E570D087FBC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68AA3B4B-62CD-48D2-B5C7-E570D087FBC7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -43,6 +55,8 @@ Global
 		{8E6DADE1-5968-49F7-ABB3-B0C4A01731FB} = {CB6CE70E-EAF6-4E53-956D-B5DD321BE60D}
 		{B6426B2D-B2E6-4B3F-8A7C-D8924DE2A360} = {9C68BCD1-6FD7-4578-8054-BD16DE0D8A53}
 		{C4658FB4-C720-49B0-9EDF-49CBE033E12F} = {B6426B2D-B2E6-4B3F-8A7C-D8924DE2A360}
+		{1C7B5407-677F-4133-B3B5-59B7FA3F303A} = {B6426B2D-B2E6-4B3F-8A7C-D8924DE2A360}
+		{68AA3B4B-62CD-48D2-B5C7-E570D087FBC7} = {CB6CE70E-EAF6-4E53-956D-B5DD321BE60D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {93251A27-F68C-4D8E-BF10-836A7806AA4D}
