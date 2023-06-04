@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace CafeManagement.API.Controllers;
 
 [ApiController]
-[Route("api/v1/cafe-mangement/menu")]
+[Route("api/v1/cafe-management/menu")]
 [ProducesResponseType(typeof(BaseResponse), (int)HttpStatusCode.BadRequest)]
 public class MenuController : ControllerBase
 {
